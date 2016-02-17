@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>HalieJs</title>
+
+	<!--  -->
+
+	<style>
+        img{
+            
+            width:150px; 
+            height:150px;
+           display: block;
+    margin-left: auto;
+    margin-right: auto
+        
+        
+        }
+        
+body{
+	font-family: 'Roboto', sans-serif;
+	color: #000;
+}
+
+#container{
+	width:800px;
+	margin:50px auto;
+	padding: 20px;
+	width:50%;
+}
+#container h2{
+	text-align:center;
+	color:#045;
+}
+
+#quoteContainer{
+	width:75%;
+	background: #fff;
+	padding:10px;
+	margin:30px auto;
+	text-align: center;
+  height:70px;
+}
+#buttonContainer{
+	width: 100%;
+	text-align: center;
+}
+#quoteButton{
+	width:200px;
+	margin-top: 10px;
+	border:2px solid #46b8da;
+	color:#045;
+	font-family: inherit;
+	font-weight: bold;
+	padding:5px;
+	text-decoration: none;
+	text-align: center;
+}
+
+#quoteButton:hover{
+	cursor:pointer;
+	background:#09c;
+	color: #fff;	
+}
+#quoteButton:active{
+	cursor: pointer;
+}
+#quoteButton{
+	display: inline-block;
+}
+#quoteGenius{
+	font-style: italic;
+	font-weight: 600;
+	text-align: center;
+}
+
+
+/*MEDIA QUERIES*/
+@media screen and(max-width:760px){
+	#quoteButton,#addNew{
+		display: block;
+	}
+}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+<img class="img-circle" src="photo.jpg"><h2 style="text-align:center;">HalieJS</h2>
+        
+        <h2 style="text-align:center;">Get Your Daily Halie Quote</h2>
+			<div id="quoteContainer">
+				<p></p>
+				<p id="quoteGenius"></p>			
+			</div><!--end quoteContainer-->
+			
+			<div id="buttonContainer">
+				<a href="#" id="quoteButton">Quote Me</a>
+		</div><!--end buttonContainer-->
+
+        
+        
+        
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+        
+        $(document).ready(function(){
+		var quoteSource=[
+		{
+			quote: "I am cracking my knuckles and updating my ios.",
+			name:"Halie Noble"
+	    },
+	    {
+	    	quote:"I am about to live tweet the heck our of the entire three-day event...",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Don’t tweet: “So-and-so is taking the stage to discuss [insert session title from conference pamphlet]”",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Dont tweet: “There is a post-conference happy hour happening in the main lobby now.”",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Is what you are about to share a coherent thought, understandable to someone not in the room?",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Dont tweet: “Holy crap what a great session.”",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"If you are halfway through writing a tweet and you can’t remember with certainty what was said, don’t tweet it.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Just because you are moving fast, doesn’t mean you have to move dumb.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"if a speaker is worth his weight in stage time, they will have a social media presence and twitter handle.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:" “I THOUGHT YOU’D BE OLDER” – ",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"I’m just more driven than you thought.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"I work my ass off. ",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Working hard is fun for me and trying new things is a passion ",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"You see things in a unique way, apply that insight to a solution.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Being ahead of the game means you’re one step closer to winning it.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"By filling the roles you take, you grow into them.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Fear is a sign that you’re doing it right.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Fear not the ugly rough draft.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"A day without sunshine is like, you know, night.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"My grandmother started walking five miles a day when she was sixty. She's ninety-seven now, and we don't know where the hell she is.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Don't sweat the petty things and don't pet the sweaty things.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Be a “friendly professional,”",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"I am an opinionated person, but most of what I share from my public accounts  is non-combative.",
+	    	name:"Halie Noble"
+	    },
+	    {
+	    	quote:"Entering any conversation is the first step to leading it.",
+	    	name:"Halie Noble"
+	    }
+
+	];
+		
+
+		$('#quoteButton').click(function(evt){
+			//define the containers of the info we target
+			var quote = $('#quoteContainer p').text();
+			var quoteGenius = $('#quoteGenius').text();
+			//prevent browser's default action
+			evt.preventDefault();
+			//getting a new random number to attach to a quote and setting a limit
+			var sourceLength = quoteSource.length;
+			var randomNumber= Math.floor(Math.random()*sourceLength);
+			//set a new quote
+			for(i=0;i<=sourceLength;i+=1){
+			var newQuoteText = quoteSource[randomNumber].quote;
+			var newQuoteGenius = quoteSource[randomNumber].name;
+			//console.log(newQuoteText,newQuoteGenius);
+      var timeAnimation = 500;
+      var quoteContainer = $('#quoteContainer');
+      //fade out animation with callback
+      quoteContainer.fadeOut(timeAnimation, function(){
+        quoteContainer.html('');
+				quoteContainer.append('<p>'+newQuoteText+'</p>'+'<p id="quoteGenius">'+'-								'+newQuoteGenius+'</p>');
+        
+        //fadein animation.
+        quoteContainer.fadeIn(timeAnimation);
+      });  
+			
+			break;
+		};//end for loop
+	
+	});//end quoteButton function
+		
+		
+});//end document ready
+
+
+        
+        
+        
+	</script>
+
+</body>
+
+</html>
